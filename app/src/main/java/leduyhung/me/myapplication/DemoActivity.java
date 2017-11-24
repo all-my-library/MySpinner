@@ -31,23 +31,5 @@ public class DemoActivity extends AppCompatActivity {
         a.add("11");
         spinner.setData(a);
         spinner.setCurrentItem(4);
-
-        spinner.setCurrentItem(0);
-        spinner.setSpinnerClickListener(new SpinnerClickListener() {
-            @Override
-            public void onPreviousClick(int index) {
-
-            }
-
-            @Override
-            public void onNextClick(int index) {
-
-            }
-        });
-        spinner.getData();
-        spinner.getTotalItem();
-        spinner.nextData();
-        spinner.previousData();
-        spinner.getCurrentItem();
     }
 }

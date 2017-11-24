@@ -49,6 +49,5 @@ public class DemoActivity extends AppCompatActivity {
         spinner.nextData();
         spinner.previousData();
         spinner.getCurrentItem();
-        spinner.run();
     }
 }

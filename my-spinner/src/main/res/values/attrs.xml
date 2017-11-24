@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MySpinnerView">
+        <attr name="my_spinner_arrow_color" format="color"/>
+        <attr name="my_spinner_value_color" format="color"/>
+        <attr name="my_spinner_background_color" format="color"/>
+        <attr name="my_spinner_radius" format="integer"/>
+        <attr name="my_spinner_arrow_size" format="dimension"/>
+        <attr name="my_spinner_border_arrow_size" format="dimension"/>
+        <attr name="my_spinner_value_size" format="dimension"/>
+        <attr name="my_spinner_padding_arrow" format="dimension"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="leduyhung.me.myapplication.DemoActivity">
+
+    <leduyhung.view.myspinner.MySpinnerView
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        custom:my_spinner_arrow_color="#FFFFFF"
+        custom:my_spinner_background_color="#005005"
+        custom:my_spinner_radius="10"
+        custom:my_spinner_padding_arrow="20dp"
+        custom:my_spinner_arrow_size="20dp"
+        custom:my_spinner_border_arrow_size="2dp"
+        custom:my_spinner_value_color="#ffffff"
+        custom:my_spinner_value_size="16sp"/>
+</LinearLayout>

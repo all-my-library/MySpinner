@@ -6,6 +6,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 import leduyhung.view.myspinner.MySpinnerView;
+import leduyhung.view.myspinner.SpinnerClickListener;
 
 public class DemoActivity extends AppCompatActivity {
 
@@ -30,5 +31,24 @@ public class DemoActivity extends AppCompatActivity {
         a.add("11");
         spinner.setData(a);
         spinner.setCurrentItem(4);
+
+        spinner.setCurrentItem(0);
+        spinner.setSpinnerClickListener(new SpinnerClickListener() {
+            @Override
+            public void onPreviousClick(int index) {
+
+            }
+
+            @Override
+            public void onNextClick(int index) {
+
+            }
+        });
+        spinner.getData();
+        spinner.getTotalItem();
+        spinner.nextData();
+        spinner.previousData();
+        spinner.getCurrentItem();
+        spinner.run();
     }
 }

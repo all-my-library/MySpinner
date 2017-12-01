@@ -101,7 +101,7 @@ public class MySpinnerView extends SurfaceView implements Runnable {
     @Override
     public void run() {
 
-        while (!holder.getSurface().isValid() && !isStop)
+        while (holder != null && !holder.getSurface().isValid() && !isStop)
             continue;
 
         runValue();

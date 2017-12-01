@@ -1,6 +1,6 @@
 # COMPILE
 <pre>
-compile 'leduyhung.my.view:my-spinner:0.0.1'
+compile 'leduyhung.my.view:my-spinner:0.0.2'
 </pre>
 # HOW TO USE
 <h3>MySpinnerView</h3>

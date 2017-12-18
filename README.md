@@ -1,6 +1,6 @@
 # COMPILE
 <pre>
-compile 'leduyhung.my.view:my-spinner:0.0.2'
+compile 'leduyhung.my.view:my-spinner:0.0.3'
 </pre>
 # HOW TO USE
 <h3>MySpinnerView</h3>
@@ -20,6 +20,7 @@ compile 'leduyhung.my.view:my-spinner:0.0.2'
         custom:my_spinner_border_arrow_size="2dp"
         custom:my_spinner_value_color="#ffffff"
         custom:my_spinner_value_size="16sp"
+        custom:my_spinner_text_no_data="no data"
 </pre>
 <br/>
 <p><b>2: Init data</b></p>

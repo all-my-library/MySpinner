@@ -20,5 +20,6 @@
         custom:my_spinner_arrow_size="20dp"
         custom:my_spinner_border_arrow_size="2dp"
         custom:my_spinner_value_color="#ffffff"
-        custom:my_spinner_value_size="16sp"/>
+        custom:my_spinner_value_size="16sp"
+        custom:my_spinner_text_no_data="@string/app_name"/>
 </LinearLayout>

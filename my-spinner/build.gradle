@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/leduyhung'
     gitUrl = 'https://github.com/all-my-library/MySpinner'
 
-    libraryVersion = "0.0.2"
+    libraryVersion = "0.0.3"
 
     developerId = 'leduyhung'
     developerName = 'leduyhung'

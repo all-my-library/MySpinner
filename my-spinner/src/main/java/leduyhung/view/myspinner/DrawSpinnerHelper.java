@@ -28,11 +28,12 @@ class DrawSpinnerHelper {
     private int itemCurrent, oldItemCurrent, totalItem;
     private float space, speed;
     private boolean isValueRunComplete;
+    private String textNoData;
 
     private ArrayList<SpinnerData> dataSpinner;
     private ArrayList<String> arrData;
 
-    DrawSpinnerHelper(int radiusView, int arrowColor, int valueColor, int colorBackground, int valueSize, int arrowSize, int borderArrowSize, int paddingArrow) {
+    DrawSpinnerHelper(int radiusView, int arrowColor, int valueColor, int colorBackground, int valueSize, int arrowSize, int borderArrowSize, int paddingArrow, String textNoData) {
 
         paintArrow = new Paint(Paint.ANTI_ALIAS_FLAG);
         paintArrow.setStyle(Paint.Style.STROKE);
@@ -55,6 +56,7 @@ class DrawSpinnerHelper {
         boundText = new Rect();
         boundTextContruct = new Rect();
         boundArrow = paddingArrow + arrowSize + borderArrowSize;
+        this.textNoData = textNoData;
     }
 
     private void drawArrowLeft(Canvas canvas) {
@@ -83,7 +85,17 @@ class DrawSpinnerHelper {
 
         if (arrData != null) {
             paintValue.getTextBounds(arrData.get(itemCurrent), 0, arrData.get(itemCurrent).length(), boundTextContruct);
-            canvas.drawText(dataSpinner.get(itemCurrent).getValue(), centerX - (boundTextContruct.width() / 2), centerY + (boundTextContruct.height() / 2), paintValue);
+            canvas.drawText(dataSpinner.get(itemCurrent).getValue(), centerX - (boundTextContruct.width() / 2),
+                    centerY + (boundTextContruct.height() / 2), paintValue);
+        }
+    }
+
+    private void drawTextNoData(Canvas canvas) {
+
+        if (textNoData != null) {
+            paintValue.getTextBounds(textNoData, 0, textNoData.length(), boundTextContruct);
+            canvas.drawText(textNoData, centerX - (boundTextContruct.width() / 2),
+                    centerY + (boundTextContruct.height() / 2), paintValue);
         }
     }
 
@@ -158,9 +170,11 @@ class DrawSpinnerHelper {
 
         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.ADD);
         canvas.drawRoundRect(rectView, radiusView, radiusView, paintBackground);
+        if (totalItem == 0)
+            drawTextNoData(canvas);
         if (itemCurrent != 0)
             drawArrowLeft(canvas);
-        if (itemCurrent != (totalItem - 1))
+        if (totalItem != 0 && itemCurrent != (totalItem - 1))
             drawArrowRight(canvas);
         if (isDrawTextContruct) {
 

@@ -34,6 +34,7 @@ public class MySpinnerView extends SurfaceView implements Runnable {
     private int radius;
     private int nextItem;
     private int totalItem;
+    private String textNoData;
 
     public MySpinnerView(Context context) {
         super(context);
@@ -89,16 +90,6 @@ public class MySpinnerView extends SurfaceView implements Runnable {
     }
 
     @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-
-        if (thread != null)
-            thread.interrupt();
-        thread = null;
-        holder = null;
-    }
-
-    @Override
     public void run() {
 
         while (holder != null && !holder.getSurface().isValid() && !isStop)
@@ -142,13 +133,14 @@ public class MySpinnerView extends SurfaceView implements Runnable {
             valueSize = typedArray.getDimensionPixelSize(R.styleable.MySpinnerView_my_spinner_value_size, 0);
             paddingArrow = typedArray.getDimensionPixelOffset(R.styleable.MySpinnerView_my_spinner_padding_arrow, PADDING_ARROW_DEFAULT);
             radius = typedArray.getInteger(R.styleable.MySpinnerView_my_spinner_radius, 0);
+            textNoData = typedArray.getString(R.styleable.MySpinnerView_my_spinner_text_no_data);
             typedArray.recycle();
         }
         holder = getHolder();
         holder.setFormat(PixelFormat.TRANSPARENT);
         setZOrderOnTop(true);
         setWillNotDraw(false);
-        drawHelper = new DrawSpinnerHelper(radius, arrowColor, valueColor, backgroundColor, valueSize, arrowSize, borderArrowSize, paddingArrow);
+        drawHelper = new DrawSpinnerHelper(radius, arrowColor, valueColor, backgroundColor, valueSize, arrowSize, borderArrowSize, paddingArrow, textNoData);
         isStop = true;
         nextItem = 0;
         setCurrentItem(0);

@@ -9,5 +9,6 @@
         <attr name="my_spinner_border_arrow_size" format="dimension"/>
         <attr name="my_spinner_value_size" format="dimension"/>
         <attr name="my_spinner_padding_arrow" format="dimension"/>
+        <attr name="my_spinner_text_no_data" format="string"/>
     </declare-styleable>
 </resources>
